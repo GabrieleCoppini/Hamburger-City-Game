@@ -13,7 +13,8 @@ const counterDisplay = document.getElementById("displayCtn");
 // Var counter
 let counter = 0;
 
-const audioButtonCounter = new Audio('audio/click-button-140881.mp3');
+//Var audio 
+const audioButtonCounter = new Audio('src/audio/click-button-140881.mp3');
  
 
 

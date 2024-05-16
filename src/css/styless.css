@@ -322,8 +322,6 @@ z-index: 1;
 
 #questionWindow {
      background-color: #05044f;
-    font-family: 'ArcadeClassic', sans-serif;                                       
-    color: #f5cd06;
     padding:30px 30px 30px 30px;
     width: 50%;
     height: auto;
@@ -337,14 +335,37 @@ z-index: 1;
     top: 5%;
     
 }
+#questionWindow h1{
+    font-family: 'ArcadeClassic', sans-serif;                                       
+    color: #f5cd06;
+    font-size: 25px;
+}
+
+#questionWindow p{
+    font-family: 'ArcadeClassic', sans-serif;                                       
+    color: #f5cd06;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;    
+}
 
 #answer{
     width: 20%;
-    height: 30px;
+    height: 20px;
     text-align: center;
-    border-radius: 20px;
-    margin-top: 20px;
    
+   
+}
+#btnInput{
+    font-family:  sans-serif;                                       
+    background-color: #f5cd06;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+     
 }
 
 
@@ -482,14 +503,26 @@ z-index: 1;
 
 
 /* Smartphone o piccoli Tablet */
+@media only screen and (max-device-width: 540px) {
+    html {
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
 @media screen and (max-height: 540px) { 
+    
 
     #preview h1{
         font-family: 'ArcadeClassic', sans-serif;
         color: #f5cd06;
         font-weight: 400;
         text-shadow: 4px 4px 4px black;
-        font-size: 40px;
+        font-size: 30px;
         animation: blink 1s steps(4, start) infinite;
        
 
@@ -497,14 +530,15 @@ z-index: 1;
   #preview p{
     text-align: left;
     /* padding: 10px 10px 10px 10px; */
-    letter-spacing: 3px;
-    line-height: 20px;
+    letter-spacing: 2px;
+    line-height: 18px;
     color: #fff;
     font-size: 15px;
 
   }
   #preview button{
     width: auto;
+    font-size: 25px;
     padding: 0px 0px 0px 0px;
   }
 

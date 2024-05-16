@@ -2,6 +2,8 @@
 
 
 
+
+
 // Array  URL images
 const imageUrls = [
   "src/icon/beer.png",
@@ -150,11 +152,13 @@ Before you begin, here are the instructions: <br>\n \
 2. Your goal is to count how many movements the Hamburger makes in one minute, following its path.<br>\n \
 3. Use the counter to record the movements by pressing the '+' and '-' buttons, and reset the counter with the 'RESET' button if needed.<br>\n \
 At the end of the game, we will ask you to indicate how many movements the Hamburger made.<br>\n \
-Enjoy the chase and good luck!  Press play and later press start to begin the game.",_);
-createElement("button",preview,"playBtn","Play", "play-btn");
+Enjoy the chase and good luck!  Press next and later press start to begin the game.",_);
+createElement("button",preview,"nextBtn","NEXT", "play-btn");
 createElement("div",sectionImg, "questionWindow",_,_,);
-createElement("h1",questionWindow,"question","How many movements did the Hamburger make?\n \ insert the number and press enter","question");
+createElement("h1",questionWindow,"question","How many movements did the Hamburger make?","question");
+createElement("p",questionWindow,"question","insert the number ","question");
 createElement("input",questionWindow,"answer",_,"answer");
+createElement("button",questionWindow,"btnInput","SEND",_)
 createElement("div",sectionImg,"windowWinner","YOU WIN","final-window");
 createElement("div",sectionImg,"windowLoser","YOU LOSE","final-window");
 createElement("div", main, "sectionPlayer", _,"section-player" );
@@ -182,4 +186,5 @@ createElement("button", startResetContainer, "resetBtn","RESET", "reset-btn");
 //Timer countdown
 createElement("div",section,"containerTimer",_,"ctn-timer");
 createElement("span",containerTimer,"Timer",_,"tex-timer");
+
 

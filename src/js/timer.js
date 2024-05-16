@@ -12,15 +12,19 @@ const audioLevelPassed = new Audio('src/audio/level-passed-143039.mp3');
 const audioGameOver = new Audio("src/audio/videogame-death-sound-43894.mp3");
 
 //Variables windows
-const playBtn = document.getElementById('playBtn');
+const nextBtn = document.getElementById('nextBtn');
 const windowPreview = document.getElementById('preview');
 
 const windowQuestion= document.getElementById('questionWindow');
 windowQuestion.style.display = "none";
+
+const btnInput = document.getElementById('btnInput'); 
 const input = document.getElementById('answer');
+input.setAttribute("type", "number");
 
 const windowWinner = document.getElementById('windowWinner');
 windowWinner.style.display = "none";
+
 const windowLoser = document.getElementById('windowLoser');
 windowLoser.style.display = "none";
 
@@ -162,10 +166,13 @@ function randomPosition(e) {
   function endTime() {
     timer.innerHTML = "Time Out";
     windowQuestion.style.removeProperty('display'); 
-    input.addEventListener('keydown', function (event) {
 
-        if (event.key === 'Enter') {
+   
+     input.addEventListener('keydown', function (event) {
+
+       if (event.key === 'Enter') {
             const valoreInput = parseFloat(input.value);
+
             if(valoreInput > hamburgerMoves || valoreInput < hamburgerMoves) {
                 windowQuestion.style.display = "none";
                 playAudio(audioGameOver);
@@ -176,6 +183,7 @@ function randomPosition(e) {
                 setTimeout(() => {
                     location.reload();
                 }, 8000);
+
             }else if (valoreInput == hamburgerMoves) {
                 windowQuestion.style.display = "none";
                 playAudio(audioLevelPassed);
@@ -188,16 +196,39 @@ function randomPosition(e) {
         }   
     });
     
+    btnInput.addEventListener('click', () => {
+        const valoreInput = parseFloat(input.value);
+        if(valoreInput > hamburgerMoves || valoreInput < hamburgerMoves) {
+            windowQuestion.style.display = "none";
+            playAudio(audioGameOver);
+            setTimeout(() => {
+                windowLoser.textContent = `Hamburger moves: ${hamburgerMoves}`;
+            }, 2000);
+           windowLoser.style.removeProperty('display');
+            setTimeout(() => {
+                location.reload();
+            }, 8000);
+    }else if (valoreInput == hamburgerMoves) {
+        windowQuestion.style.display = "none";
+        playAudio(audioLevelPassed);
+        windowWinner.style.removeProperty('display');
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
+       
     }
+  
+    });
+}
 
 
 
  
-
+    
 
     let previewClicked = false;
 
-    playBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', () => {
       windowPreview.style.display = "none";
       previewClicked = true;
     });
@@ -207,9 +238,10 @@ function randomPosition(e) {
         countdown();
       }
     });
-
-
-
+   
+   
+     
+    
 
 
 
