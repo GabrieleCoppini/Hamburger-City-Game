@@ -177,10 +177,10 @@ createElement("button", btnContainer, "btn-plus","+" ,"btn-counter" );
 
 //Start button
 createElement("div", counter, "startResetContainer",_, "start-ctn");
-createElement("button", startResetContainer, "startBtn","START", "start-btn");
+createElement("button", startResetContainer, "startBtn",_, "start-btn");
 
 //Reset button
-createElement("button", startResetContainer, "resetBtn","RESET", "reset-btn");
+createElement("button", startResetContainer, "resetBtn",_, "reset-btn");
 
 
 //Timer countdown
