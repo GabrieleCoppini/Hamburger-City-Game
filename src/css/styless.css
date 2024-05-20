@@ -230,6 +230,16 @@ z-index: 1;
     transition: All 250ms ease;
 
 }
+#resetBtn{
+    margin-left: 20px;
+}
+#resetBtn::before{
+    content: "RESET";
+}
+
+#startBtn::before{
+    content: "START"; 
+  }
 
 
 
